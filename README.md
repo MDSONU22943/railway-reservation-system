@@ -31,7 +31,7 @@ We will introduce each technology only when the learning roadmap reaches it.
 
 | Phase | Topics | Status |
 |---|---|---|
-| 0 | Client/server, networking, HTTP, request-response | Lesson 1 completed |
+| 0 | Client/server, networking, HTTP, request-response | Lessons 1–2 implemented; Lesson 2 local testing in progress |
 | 1 | REST API design with Node.js and Express | Planned |
 | 2 | PostgreSQL and relational data modelling | Planned |
 | 3 | Authentication, password hashing, JWT, roles | Planned |
@@ -52,9 +52,13 @@ railway-reservation-system/
 ├── README.md
 ├── docs/
 │   └── phase-0/
-│       └── lesson-01-client-server.md
+│       ├── lesson-01-client-server.md
+│       └── lesson-02-http-methods-and-rest.md
 └── backend/
-    └── phase-0-lesson-01/
+    ├── phase-0-lesson-01/
+    │   ├── package.json
+    │   └── server.js
+    └── phase-0-lesson-02/
         ├── package.json
         └── server.js
 ```
@@ -83,5 +87,7 @@ A railway booking system must protect inventory from concurrent requests. Checki
 - [x] Phase 0, Lesson 1 theory and notes committed.
 - [x] Lesson 1 quiz passed: server processes search requests; backend protects database access; `res.json()` sends JSON responses.
 - [x] Lesson 1 sample Express server code committed.
-- [ ] Run the sample server locally and test the `/trains` endpoint.
-- [ ] Start Phase 0, Lesson 2 after the practical exercise.
+- [x] Lesson 1 sample server run locally and `/trains` endpoint tested.
+- [x] Phase 0, Lesson 2 theory, Express API implementation, and notes committed.
+- [ ] Run Lesson 2 server locally and test its GET/POST/PUT/PATCH/DELETE endpoints.
+- [ ] Complete Lesson 2 quiz.
