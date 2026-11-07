@@ -119,7 +119,17 @@ This example uses hard-coded sample data. In a later database lesson, we will re
 | Response | Message returned by the server |
 | JSON | Common data format used in API responses |
 
-## 7. Quiz
+## 7. Quiz result
+
+The learner correctly answered all three questions:
+
+1. **Server** processes the train search request.
+2. **Security:** the backend keeps database credentials private and enforces validation, authentication, and authorization instead of exposing direct database access to the browser.
+3. **JSON response:** Express `res.json(data)` serializes the JavaScript value as JSON, sends it to the client, and sets the response content type.
+
+Result: **3/3 correct – Lesson 1 quiz passed.**
+
+## 8. Quiz
 
 Answer these in your own words. Try without looking at the notes.
 
