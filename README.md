@@ -31,7 +31,7 @@ We will introduce each technology only when the learning roadmap reaches it.
 
 | Phase | Topics | Status |
 |---|---|---|
-| 0 | Client/server, networking, HTTP, request-response | In progress |
+| 0 | Client/server, networking, HTTP, request-response | Lesson 1 completed |
 | 1 | REST API design with Node.js and Express | Planned |
 | 2 | PostgreSQL and relational data modelling | Planned |
 | 3 | Authentication, password hashing, JWT, roles | Planned |
@@ -45,7 +45,7 @@ We will introduce each technology only when the learning roadmap reaches it.
 | 11 | Docker, deployment, monitoring | Planned |
 | 12 | Security and system design | Planned |
 
-## Repository structure (will grow as lessons are completed)
+## Repository structure
 
 ```text
 railway-reservation-system/
@@ -53,21 +53,25 @@ railway-reservation-system/
 ├── docs/
 │   └── phase-0/
 │       └── lesson-01-client-server.md
-├── backend/       # introduced in the API phase
-├── frontend/      # introduced in the frontend phase
-└── tests/         # introduced with automated testing
+└── backend/
+    └── phase-0-lesson-01/
+        ├── package.json
+        └── server.js
 ```
 
-## How each lesson works
+## Teaching and implementation method
 
-1. Concept in beginner-friendly language.
-2. Real railway booking example.
-3. Diagram or request-flow explanation.
-4. Code walkthrough (when relevant).
-5. Small quiz or practical exercise.
-6. Notes and code committed to this repository.
+Every lesson follows this order:
 
-We will move to the next lesson after the current exercise is understood.
+1. **Theory first:** understand the concept and why it exists.
+2. **Real-world example:** connect it to a railway booking scenario.
+3. **Flow / diagram:** understand how the parts communicate.
+4. **Code:** implement only after the concept is clear.
+5. **Line-by-line explanation:** understand every important statement.
+6. **Practice and quiz:** verify understanding before moving ahead.
+7. **GitHub commit:** save the lesson notes and working code.
+
+We will proceed in small steps. Do not move ahead until the current concept and exercise are understood.
 
 ## Important engineering concept
 
@@ -76,6 +80,8 @@ A railway booking system must protect inventory from concurrent requests. Checki
 ## Progress
 
 - [x] Repository created.
-- [x] Phase 0, Lesson 1: client, server, and database fundamentals explained in chat.
-- [ ] Commit Lesson 1 notes and example code.
-- [ ] Complete the Lesson 1 quiz.
+- [x] Phase 0, Lesson 1 theory and notes committed.
+- [x] Lesson 1 quiz passed: server processes search requests; backend protects database access; `res.json()` sends JSON responses.
+- [x] Lesson 1 sample Express server code committed.
+- [ ] Run the sample server locally and test the `/trains` endpoint.
+- [ ] Start Phase 0, Lesson 2 after the practical exercise.
