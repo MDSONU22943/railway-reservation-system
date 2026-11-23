@@ -1,0 +1,88 @@
+# RailBook Phase 0 — Lesson 2 API Practice
+# VS Code extension: REST Client (Huachao Mao)
+# 1. Run: cd backend/phase-0-lesson-02 && npm install && npm start
+# 2. Open this file and click "Send Request" above each request.
+# 3. Run requests in order: create -> update -> delete.
+# Data is stored in memory and resets on server restart.
+
+@baseUrl = http://localhost:3001
+@trainNumber = 12999
+
+### 1. GET — list all trains (expected 200)
+GET {{baseUrl}}/trains
+
+### 2. GET — filter by source and destination (expected 200)
+GET {{baseUrl}}/trains?from=Bhagalpur&to=New%20Delhi
+
+### 3. GET — get a specific train (expected 200)
+GET {{baseUrl}}/trains/12368
+
+### 4. POST — create a train (expected 201)
+POST {{baseUrl}}/trains
+Content-Type: application/json
+
+{
+  "trainNumber": {{trainNumber}},
+  "trainName": "Test Express",
+  "source": "Bhagalpur",
+  "destination": "Patna"
+}
+
+### 5. POST — duplicate train number (expected 409 after step 4)
+POST {{baseUrl}}/trains
+Content-Type: application/json
+
+{
+  "trainNumber": {{trainNumber}},
+  "trainName": "Duplicate Express",
+  "source": "Bhagalpur",
+  "destination": "Patna"
+}
+
+### 6. PUT — replace editable fields (expected 200)
+PUT {{baseUrl}}/trains/{{trainNumber}}
+Content-Type: application/json
+
+{
+  "trainName": "Updated Test Express",
+  "source": "Bhagalpur",
+  "destination": "New Delhi"
+}
+
+### 7. PATCH — change only destination (expected 200)
+PATCH {{baseUrl}}/trains/{{trainNumber}}
+Content-Type: application/json
+
+{
+  "destination": "Kolkata"
+}
+
+### 8. GET — confirm updated record (expected 200)
+GET {{baseUrl}}/trains/{{trainNumber}}
+
+### 9. DELETE — remove the test train (expected 204, empty body)
+DELETE {{baseUrl}}/trains/{{trainNumber}}
+
+### 10. GET — deleted train no longer exists (expected 404)
+GET {{baseUrl}}/trains/{{trainNumber}}
+
+### 11. GET — invalid train number (expected 400)
+GET {{baseUrl}}/trains/not-a-number
+
+### 12. POST — missing required fields (expected 400)
+POST {{baseUrl}}/trains
+Content-Type: application/json
+
+{
+  "trainNumber": 13001,
+  "trainName": "Incomplete Express"
+}
+
+### 13. PATCH — disallowed field (expected 400 if train exists)
+# Run this before step 9 or recreate the train with step 4.
+PATCH {{baseUrl}}/trains/{{trainNumber}}
+Content-Type: application/json
+
+{
+  "trainNumber": 88888
+}
