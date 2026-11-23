@@ -233,6 +233,12 @@ app.use((error, req, res, next) => {
     return next(error);
 });
 
-app.listen(PORT, () => {
-    console.log(`RailBook Lesson 2 server running at http://localhost:${PORT}`);
-});
+// Start listening only when running this file directly.
+// Automated tests can import the app and choose an available port.
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`RailBook Lesson 2 server running at http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
