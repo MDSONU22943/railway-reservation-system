@@ -31,7 +31,7 @@ We will introduce each technology only when the learning roadmap reaches it.
 
 | Phase | Topics | Status |
 |---|---|---|
-| 0 | Client/server, networking, HTTP, request-response | Lessons 1–2 implemented; Lesson 2 local testing in progress |
+| 0 | Client/server, networking, HTTP, request-response | Lessons 1–2 implemented; core Lesson 2 API tests verified, final quiz pending |
 | 1 | REST API design with Node.js and Express | Planned |
 | 2 | PostgreSQL and relational data modelling | Planned |
 | 3 | Authentication, password hashing, JWT, roles | Planned |
@@ -89,5 +89,8 @@ A railway booking system must protect inventory from concurrent requests. Checki
 - [x] Lesson 1 sample Express server code committed.
 - [x] Lesson 1 sample server run locally and `/trains` endpoint tested.
 - [x] Phase 0, Lesson 2 theory, Express API implementation, and notes committed.
-- [ ] Run Lesson 2 server locally and test its GET/POST/PUT/PATCH/DELETE endpoints.
+- [x] Run Lesson 2 server locally and verify GET/POST/PUT/PATCH/DELETE endpoints (including 200, 204, 404 and 409 responses).
+- [x] Run Lesson 2 automated integration tests locally: 5 passed, 0 failed.
+- [x] Verify invalid train number returns HTTP 400.
+- [ ] Confirm final invalid PATCH field manual test (Test Case 13).
 - [ ] Complete Lesson 2 quiz.
