@@ -1,0 +1,14 @@
+{
+  "name": "railbook-phase-1-lesson-01",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RailBook Phase 1 Lesson 1: Express routes, controllers, services and data",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
