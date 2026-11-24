@@ -1,0 +1,10 @@
+@baseUrl = http://localhost:3002
+
+### All trains: expected 200 / count 2
+GET {{baseUrl}}/trains
+
+### Filter source + destination: expected 200 / count 1
+GET {{baseUrl}}/trains?from=Bhagalpur&to=New%20Delhi
+
+### No matching train: expected 200 / count 0
+GET {{baseUrl}}/trains?from=Unknown
